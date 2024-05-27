@@ -5,7 +5,7 @@ import pandas as pd
 
 st.sidebar.title('Movie Settings')
 html_temp = """
-<div style="background-color:red;padding:10px">
+<div style="background-color:red;padding:5px">
 <h2 style="color:white;text-align:center;">Recommended Movie Generator</h2>
 </div>"""
 st.markdown(html_temp,unsafe_allow_html=True)
