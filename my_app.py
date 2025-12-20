@@ -29,7 +29,7 @@ my_dict = {
     "Genre": genre
 }
 
-df = pd.DataFrame.from_dict([my_dict])
+df = pd.DataFrame.from_dict([my_dict],)
 
 
 st.header("Your movie settings:")
