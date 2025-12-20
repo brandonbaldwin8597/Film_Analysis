@@ -25,7 +25,7 @@ my_dict = {
     "Movie Length": length,
     "Movie Era": movie_era,
     "Votes": num_of_votes,
-    'Gross':gross,
+    'Gross': gross,
     "Genre": genre
 }
 
