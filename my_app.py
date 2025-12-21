@@ -13,18 +13,18 @@ st.markdown(html_temp,unsafe_allow_html=True)
 
 length = st.sidebar.radio("What length of movie do you prefer?",('Short', 'Average', 'Long'))
 movie_era = st.sidebar.radio("What movie era do you prefer?",('Vintage', 'Classic', 'Modern'))
-num_of_votes = st.sidebar.slider("Number of Movie Ratings", 0, 500000, step=1000)
-gross = st.sidebar.slider("Total Gross of Movie", 0, 100000000, step=1000)
-genre = st.sidebar.selectbox("Select your favorite genre(s)", ('Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+popularity = st.sidebar.radio("Number of Movie Ratings", ('Small Market', 'Main Stream', 'Popular'))
+gross = st.sidebar.pills("Revenue status:", options=['Profitable', 'Unprofitable'])
+genre = st.sidebar.multiselect("Select your favorite genre(s)", ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
        'Drama', 'Family', 'Fantasy', 'Film-Noir', 'History', 'Horror',
        'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Sport',
-       'Thriller', 'War', 'Western'))
+       'Thriller', 'War', 'Western'])
 
 
 my_dict = {
     "Movie Length": length,
     "Movie Era": movie_era,
-    "Votes": num_of_votes,
+    "Popularity": popularity,
     'Gross': gross,
     "Genre": genre
 }
