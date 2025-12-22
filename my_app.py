@@ -4,21 +4,24 @@ import pandas as pd
 
 # Settings and Title
 st.set_page_config(layout="wide")
-st.sidebar.title('Movie Settings')
 html_temp = """
 <div style="background-color:blue;padding:5px">
-<h2 style="color:white;text-align:center;">Movie Recommendation App</h2>
+<h1 style="color:white;text-align:center;">Movie Recommendation App</h1>
 </div>"""
 st.markdown(html_temp, unsafe_allow_html=True)
 
 # Sidebar
-length = st.sidebar.radio("What length of movie do you prefer?",('Short', 'Average', 'Long'))
-movie_era = st.sidebar.radio("What movie era do you prefer?",('Vintage', 'Classic', 'Modern'))
-popularity = st.sidebar.radio("Number of Movie Ratings", ('Small Market', 'Main Stream', 'Popular'))
-gross = st.sidebar.pills("Revenue status:", options=['Profitable', 'Unprofitable'])
+st.sidebar.title('Movie Settings')
+st.sidebar.divider()
+length = st.sidebar.radio("Pick a preferred movie length",('Long', 'Average', 'Short', 'Any'))
+movie_era = st.sidebar.radio("Pick a preferred era of film:",('Modern', 'Classic', 'Vintage', 'Any'))
+popularity = st.sidebar.radio("Pick a popularity category:", ('Popular', 'Main Stream', 'Niche', 'Any'))
+gross = st.sidebar.pills("Revenue status:", options=['1,000,000+', '100,000,000+'], selection_mode='multi', default=['1,000,000+', '100,000,000+'])
 
 # Main Page
-genre = st.multiselect("Select your favorite genre(s)", ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+st.divider()
+i, j, k = st.columns(3)
+genre = j.multiselect("Select your favorite genre(s). Maximum of 3.", ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
        'Drama', 'Family', 'Fantasy', 'Film-Noir', 'History', 'Horror',
        'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Sport',
        'Thriller', 'War', 'Western'], max_selections=3)
@@ -43,10 +46,7 @@ colB.button("Show Results", type='primary', use_container_width=True)
 #     "Genre": genre
 # }
 
-# df = pd.DataFrame.from_dict([my_dict])
-
-
-# st.header("Your movie settings:")
+# df = pd.DataFrame.from_dict([my_dict]))
 # st.table(df)
 
 # columns= ['age',
@@ -64,11 +64,6 @@ colB.button("Show Results", type='primary', use_container_width=True)
 #  'make_model_Renault Clio',
 #  'make_model_Renault Duster',
 #  'make_model_Renault Espace']
-
-
-# df = pd.get_dummies(df).reindex(columns=columns, fill_value=0)
-
-# st.subheader("Press predict if configuration is okay")
 
 # if st.button("Predict"):
 #     prediction = model.predict(df)
