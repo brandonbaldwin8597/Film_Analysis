@@ -16,7 +16,7 @@ st.sidebar.divider()
 length = st.sidebar.radio("Pick a preferred movie length",('Long', 'Average', 'Short', 'Any'))
 movie_era = st.sidebar.radio("Pick a preferred era of film:",('Modern', 'Classic', 'Vintage', 'Any'))
 popularity = st.sidebar.radio("Pick a popularity category:", ('Popular', 'Main Stream', 'Niche', 'Any'))
-gross = st.sidebar.pills("Revenue status:", options=['1,000,000+', '100,000,000+'], selection_mode='multi', default=['1,000,000+', '100,000,000+'])
+gross = st.sidebar.pills("Revenue status:", options=['$1,000,000+', '$100,000,000+'], selection_mode='multi', default=['$1,000,000+', '$100,000,000+'])
 
 # Main Page
 st.divider()
